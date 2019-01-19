@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  lastname: MyString
+  patronymic: MyString
+  passport_series: MyString
+  passport_number: MyString
+  address: MyString
+  borrower_name: MyString
+  borrower_lastname: MyString
+  borrower_patronymic: MyString
+  borrower_passport_series: MyString
+  borrower_passport_number: MyString
+  borrower_address: MyString
+  debt_summ: MyString
+  date_return_debt: MyString
+
+two:
+  name: MyString
+  lastname: MyString
+  patronymic: MyString
+  passport_series: MyString
+  passport_number: MyString
+  address: MyString
+  borrower_name: MyString
+  borrower_lastname: MyString
+  borrower_patronymic: MyString
+  borrower_passport_series: MyString
+  borrower_passport_number: MyString
+  borrower_address: MyString
+  debt_summ: MyString
+  date_return_debt: MyString

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <ul class="menu">
+    <li><%= link_to 'домой', root_path %></li>
+    <li><%= link_to 'новая расписка', 'debts/new' %></li>
+    <li><%= link_to 'все расписки', 'debts/all' %></li>
+    <li><%= link_to 'новый пользователь', 'users/new_user' %></li>
+    <li><%= link_to 'вход', 'signin' %></li>
+  </ul>
+  <% if logged_in? %>
+    <div style="text-align: right">
+      <%= current_user || 'User is not logged in' %>
+    </div>
+  <% end %>
+  <% if flash[:notice]  %>
+    <div style="background-color: lemonchiffon">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>
