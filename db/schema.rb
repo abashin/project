@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_19_105643) do
+ActiveRecord::Schema.define(version: 2019_01_23_091803) do
 
   create_table "debts", force: :cascade do |t|
     t.string "name"
@@ -35,11 +35,28 @@ ActiveRecord::Schema.define(version: 2019_01_19_105643) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rights", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password"
+    t.string "patronymic"
+    t.string "passport_series"
+    t.string "passport_number"
+    t.string "address"
+    t.string "passport_institution"
+    t.string "passport_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "right_id"
+    t.string "lastname"
+    t.string "name"
+    t.index ["right_id"], name: "index_users_on_right_id"
   end
 
 end

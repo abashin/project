@@ -10,7 +10,7 @@ class DebtsController < ApplicationController
       flash[:notice] = 'Введите данные ещё раз'
       render 'new'
     else
-      flash[:notice] = 'Пользователь был создан'
+      flash[:notice] = 'Расписка была создана'
       render 'new'    end
   end
 

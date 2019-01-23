@@ -3,7 +3,19 @@
 one:
   email: MyString
   password: MyString
+  patronymic: MyString
+  passport_series: MyString
+  passport_number: MyString
+  address: MyString
+  passport_institution: MyString
+  passport_date: MyString
 
 two:
   email: MyString
   password: MyString
+  patronymic: MyString
+  passport_series: MyString
+  passport_number: MyString
+  address: MyString
+  passport_institution: MyString
+  passport_date: MyString

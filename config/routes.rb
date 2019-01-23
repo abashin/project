@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   resources :debts
-  resources :users
+  get '/exit', to: 'users#exit'
+  get '/personal_area', to: 'users#personal_area'
+  get '/new_debt', to: 'debts#new'
   get '/signin', to: 'users#signin'
   get '/all', to: 'debts#all'
   get '/all_users', to: 'users#all_users'
   get '/new_user', to: 'users#new_user'
   get '/index', to: 'users#index'
-  post '/login', to: 'users#login'
+  post 'login', to: 'users#login'
+  post 'create', to: 'users#create'
 
 
   root "users#main"

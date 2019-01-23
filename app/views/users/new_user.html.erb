@@ -1,6 +1,16 @@
-<%= form_for @user do |f| %>
+<%= form_for @user, url: 'create' do |f| %>
   <h1>
   <%= f.text_field :email %>
   <%= f.text_field :password %>
-  <%= f.submit %></h1>
+    <%= f.text_field :name %>
+    <%= f.text_field :lastname %>
+    <%= f.text_field :patronymic %>
+    <%= f.text_field :passport_series %>
+    <%= f.text_field :passport_number %>
+    <%= f.text_field :passport_institution %>
+    <%= f.text_field :passport_date %>
+    <%= f.text_field :address %>
+    <%= f.collection_select :right_id, Right.all, :id , :name  %>
+
+    <%= f.submit %></h1>
 <% end %>
