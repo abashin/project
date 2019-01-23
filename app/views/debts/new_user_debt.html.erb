@@ -1,0 +1,26 @@
+<%= form_for @debt, url: 'create_debt_with_logged_user' do |f| %>
+  <p>
+    РАСПИСКА
+    в получении суммы займа
+
+    г. _______________                                  "__"___________ ____ г.
+
+    Я, <%= current_user['name'] %> <%= current_user['lastname'] %> <%= current_user['patronymic'] %>, паспорт: серия <%= current_user['passport_series'] %> № <%= current_user['passport_number'] %>,
+    (Ф.И.О. Заемщика)
+    выдан <%= current_user['passport_institution']  %> <%= current_user['passport_date']  %>,
+    (когда, кем)
+    проживающему(ей) по адресу: <%= current_user['address'] %>,
+    получил от <%= f.text_field :borrower_name %><%= f.text_field :borrower_lastname %><%= f.text_field :borrower_patronymic %>, паспорт: серия <%= f.text_field :borrower_passport_series %> N <%= f.text_field :borrower_passport_number %>,
+    (Ф.И.О. Заимодавца)
+    выдан <%= f.text_field :borrower_passport_institution %> <%= f.text_field :borrower_passport_date %>,
+    (когда, кем)
+    проживающему(ей) по адресу: <%= f.text_field :borrower_address %>,
+    денежные средства в сумме <%= f.text_field :debt_summ %> рублей (далее - "Сумма займа")
+    и обязуюсь возвратить Заимодавцу Сумму займа в срок до <%= f.text_field :date_return_debt %>г.
+
+
+    "__"___________ ____ г. ______________________
+    (подпись Заемщика)      (Ф.И.О. Заемщика)
+
+    <%= f.submit %></p>
+<% end %>

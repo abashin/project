@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :debts
+  get '/my_debts', to: 'debts#my_debts'
+  get '/user_debt_main_page', to: 'debts#user_debt_main_page'
+  get '/debt_for_borrower', to: 'debts#debt_for_borrower'
+  get '/new_user_debt', to: 'debts#new_user_debt'
   get '/exit', to: 'users#exit'
   get '/personal_area', to: 'users#personal_area'
   get '/new_debt', to: 'debts#new'
@@ -10,6 +14,8 @@ Rails.application.routes.draw do
   get '/index', to: 'users#index'
   post 'login', to: 'users#login'
   post 'create', to: 'users#create'
+  post 'create_debt_with_logged_user', to: 'debts#create_debt_with_logged_user'
+  post 'create_debt_for_borrower', to: 'debts#create_debt_for_borrower'
 
 
   root "users#main"
