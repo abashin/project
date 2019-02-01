@@ -1,6 +1,10 @@
 
 <% @users.each do |u| %>
   <p>
-    <%= u.email + ', ' + u.password %>
+    <td>
+    <%= u.email%>
+      <%= link_to 'delete', u, method: :delete %>
+      <%= link_to 'edit', edit_user_path(u) %>
+    </td>
   </p>
 <% end %>

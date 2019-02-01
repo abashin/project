@@ -1,31 +1,19 @@
 <%= form_for @debt do |f| %>
-  <p>
-    РАСПИСКА
-    в получении суммы займа
-
-    г. _______________                                  "__"___________ ____ г.
-
-    Я, <%= f.text_field :name %><%= f.text_field :lastname %><%= f.text_field :patronymic %>, паспорт: серия <%= f.text_field :passport_series %> № <%= f.text_field :passport_number %>,
-    (Ф.И.О. Заемщика)
-    выдан <%= f.text_field :passport_institution %><%= f.text_field :passport_date %>,
-    (когда, кем)
-    проживающему(ей) по адресу: <%= f.text_field :address %>,
-    получил от <%= f.text_field :borrower_name %><%= f.text_field :borrower_lastname %><%= f.text_field :borrower_patronymic %>, паспорт: серия <%= f.text_field :borrower_passport_series %> N <%= f.text_field :borrower_passport_number %>,
-    (Ф.И.О. Заимодавца)
-    выдан <%= f.text_field :borrower_passport_institution %> <%= f.text_field :borrower_passport_date %>,
-    (когда, кем)
-    проживающему(ей) по адресу: <%= f.text_field :borrower_address %>,
-    денежные средства в сумме <%= f.text_field :debt_summ %> рублей (далее - "Сумма займа")
-    и обязуюсь возвратить Заимодавцу Сумму займа в срок до <%= f.text_field :date_return_debt %>г.
-
-
-    "__"___________ ____ г. ______________________
-    (подпись Заемщика)      (Ф.И.О. Заемщика)
-
-    <%= f.submit %></p>
+  <p>РАСПИСКА</p>
+  <p>в получении суммы займа</p>
+  <p> г. _______________                                  "__"___________ ____ г.</p>
+  <p>Я, заемщик, <input type="text" placeholder="имя заемщика" name="debt[name]" id="debt_name" /> <input type="text" placeholder="фамилия заемщика" name="debt[lastname]" id="debt_lastname" /> <input type="text" placeholder="отчество заемщика" name="debt[patronymic]" id="debt_patronymic" />,</p>
+  <p><input type="text" placeholder="дата рождения заёмщиков" name="debt[date_of_birth]" id="debt_date_of_birth" /> г.р., родившейся, паспорт: <input type="text" placeholder="серия паспорта заемщика" name="debt[passport_series]" id="debt_passport_series" /> <input type="text" placeholder="номер паспорта заемщика" name="debt[passport_number]" id="debt_passport_number" />,</p>
+  <p>выдан: <input type="text" placeholder="орган выдавший паспорт заемщика" name="debt[passport_institution]" id="debt_passport_institution" /> <input type="text" placeholder="дата выдачи паспорта заемщику" name="debt[passport_date]" id="debt_passport_date" />,</p>
+  <p>проживающему(ей) по адресу: <input type="text" placeholder="адрес заемщика" name="debt[address]" id="debt_address" />,</p>
+  <p>получил от <input type="text" placeholder="имя заимодавца" name="debt[borrower_name]" id="debt_borrower_name" /> <input type="text" placeholder="фамилия заимодавца" name="debt[borrower_lastname]" id="debt_borrower_lastname" /> <input type="text" placeholder="отчество заимодавца" name="debt[borrower_patronymic]" id="debt_borrower_patronymic" />,</p>
+  <p><input type="text" placeholder="дата рождения заимодавца" name="debt[borrower_date_of_birth]" id="debt_borrower_date_of_birth" /> г.р., родившейся, паспорт: <input type="text" placeholder="серия паспорта заимодавца"  name="debt[borrower_passport_series]" id="debt_borrower_passport_series" /> <input type="text" placeholder="номер паспорта заимодавца"  name="debt[borrower_passport_number]" id="debt_borrower_passport_number" />,</p>
+  <p>выдан <input type="text" placeholder="орган выдавший паспорт заимодавцу" name="debt[borrower_passport_institution]" id="debt_borrower_passport_institution" /> <input type="text" placeholder="дата выдачи паспорта заимодавцу" name="debt[borrower_passport_date]" id="debt_borrower_passport_date" />,</p>
+  <p>проживающему(ей) по адресу: <input type="text" placeholder="адрес заимодавца" name="debt[borrower_address]" id="debt_borrower_address" />,</p>
+  <p>денежные средства в сумме <input type="text" placeholder="сумма займа" name="debt[debt_summ]" id="debt_debt_summ" /> рублей (далее - "Сумма займа")</p>
+  <p>и обязуюсь возвратить Заимодавцу Сумму займа в срок до <input type="text" placeholder="дата возврата денежных средств" name="debt[date_return_debt]" id="debt_date_return_debt" />г.</p>
+  <p>"__"___________ ____ г. ______________________</p>
+  <p>(подпись Заемщика)(Ф.И.О. Заемщика)</p>
+  <%= f.submit %>
 <% end %>
-
-
-
-
 

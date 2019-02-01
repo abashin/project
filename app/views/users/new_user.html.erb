@@ -1,16 +1,16 @@
 <%= form_for @user, url: 'create' do |f| %>
   <h1>
-  <%= f.text_field :email %>
-  <%= f.text_field :password %>
-    <%= f.text_field :name %>
-    <%= f.text_field :lastname %>
-    <%= f.text_field :patronymic %>
-    <%= f.text_field :passport_series %>
-    <%= f.text_field :passport_number %>
-    <%= f.text_field :passport_institution %>
-    <%= f.text_field :passport_date %>
-    <%= f.text_field :address %>
-    <%= f.collection_select :right_id, Right.all, :id , :name  %>
+    <p><input type="text" placeholder="email" name="user[email]" id="user_email" />
+      <input type="text" placeholder="пароль" name="user[password]" id="user_password" /></p>
+    <p><input type="text" placeholder="имя" name="user[name]" id="user_name" />
+      <input type="text" placeholder="фамилия" name="user[lastname]" id="user_lastname" />
+      <input type="text" placeholder="отчество" name="user[patronymic]" id="user_patronymic" /></p>
+    <p><input type="text" placeholder="серия паспорта" name="user[passport_series]" id="user_passport_series" />
+      <input type="text" placeholder="номер паспорта" name="user[passport_number]" id="user_passport_number" />
+      <input type="text" placeholder="орган выдавший паспорт" name="user[passport_institution]" id="user_passport_institution" />
+      <input type="text" placeholder="дата выдачи паспорта" name="user[passport_date]" id="user_passport_date" /></p>
+    <p><input type="text" placeholder="адрес" name="user[address]" id="user_address" /></p>
+    <p><%= f.collection_select :right_id, Right.all, :id , :name  %></p>
 
     <%= f.submit %></h1>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_23_091803) do
+ActiveRecord::Schema.define(version: 2019_02_01_083034) do
 
   create_table "debts", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2019_01_23_091803) do
     t.string "borrower_passport_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "date_of_birth"
+    t.string "borrower_date_of_birth"
   end
 
   create_table "rights", force: :cascade do |t|

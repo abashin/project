@@ -1,8 +1,27 @@
 .menu {
-    text-align: center;
+    text-align: left;
+    background: #f8f8ff;
+    padding: 10px;
 }
 
-.menu li {
+.menu p {
+    margin-top: 0; /* Отступ сверху */
+    margin-bottom: 0; /* Отступ снизу */
+    margin: 0px 30px 0px 0%;
     display: inline;
-    margin: 0px 10px;
+}
+
+#header {
+    background: #8fa09b; /* Цвет фона */
+    font-size: 24pt; /* Размер текста */
+    font-weight: bold; /* Жирное начертание */
+
+    color: #edeed5; /* Цвет текста */
+    padding: 5px; /* Отступы вокруг текста */
+}
+
+body {
+    font: 11pt Arial, Helvetica, sans-serif; /* Рубленый шрифт текста */
+    margin: 10px; /* Отступы на странице */
+    background: #ffffff;
 }

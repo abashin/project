@@ -1,25 +1,20 @@
-<% @debts.each do |u| %>
-  <p>
-    РАСПИСКА
-    в получении суммы займа
-
-    г. _______________                                  "__"___________ ____ г.
-
-    Я, <%=u.name %> <%=u.lastname %> <%=u.patronymic %>, паспорт: серия <%=u.passport_series %> № <%=u.passport_number %>,
-    (Ф.И.О. Заемщика)
-    выдан <%=u.passport_institution %> <%=u.passport_date %>,
-    (когда, кем)
-    проживающему(ей) по адресу: <%= u.address %>,
-    получил от <%=u.borrower_name %> <%=u.borrower_lastname %> <%=u.borrower_patronymic %>, паспорт: серия <%=u.borrower_passport_series %> N <%= u.borrower_passport_number %>,
-    (Ф.И.О. Заимодавца)
-    выдан <%= u.borrower_passport_institution %> <%=u.borrower_passport_date %>,
-    (когда, кем)
-    проживающему(ей) по адресу: <%=u.borrower_address %>,
-    денежные средства в сумме <%= u.debt_summ %> рублей (далее - "Сумма займа")
-    и обязуюсь возвратить Заимодавцу Сумму займа в срок до <%= u.date_return_debt %>г.
 
 
-    "__"___________ ____ г. ______________________
-    (подпись Заемщика)      (Ф.И.О. Заемщика)
-  </p>
+<%= @debts.each do |u| %>
+  <p>РАСПИСКА</p>
+  <p>в получении суммы займа</p>
+  <p> г. _______________                                  "__"___________ ____ г.</p>
+  <p>Я, заемщик, <%=u.name %> <%=u.lastname %> <%=u.patronymic %>,</p>
+  <p>паспорт: <%=u.passport_series %> № <%=u.passport_number %>,</p>
+  <p>выдан: <%=u.passport_institution %> <%=u.passport_date %>,</p>
+  <p>проживающему(ей) по адресу: <%= u.address %>,</p>
+  <p>получил от <%=u.borrower_name %> <%=u.borrower_lastname %> <%=u.borrower_patronymic %>,</p>
+  <p>паспорт: <%=u.borrower_passport_series %> N <%= u.borrower_passport_number %>,</p>
+  <p>выдан <%= u.borrower_passport_institution %> <%=u.borrower_passport_date %>,</p>
+  <p>проживающему(ей) по адресу: <%=u.borrower_address %>,</p>
+  <p>денежные средства в сумме <%= u.debt_summ %> рублей (далее - "Сумма займа")</p>
+  <p>и обязуюсь возвратить Заимодавцу Сумму займа в срок до <%= u.date_return_debt %>г.</p>
+  <p>"__"___________ ____ г. ______________________</p>
+  <p>(подпись Заемщика)(Ф.И.О. Заемщика)</p>
+
 <% end %>

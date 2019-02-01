@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :debts
+  resources :users
   get '/my_debts', to: 'debts#my_debts'
   get '/user_debt_main_page', to: 'debts#user_debt_main_page'
   get '/debt_for_borrower', to: 'debts#debt_for_borrower'

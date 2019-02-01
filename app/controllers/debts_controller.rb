@@ -4,11 +4,11 @@ class DebtsController < ApplicationController
   end
 
   def my_debts
-    @debts = Debt.where(name: current_user['name'])
+    @debts = Debt.where(borrower_name: current_user['name']) + Debt.where(name: current_user['name'])
   end
 
   def create
-    @debt = Debt.create(name: params[:debt][:name], lastname: params[:debt][:lastname],  patronymic: params[:debt][:patronymic], passport_series: params[:debt][:passport_series], passport_number: params[:debt][:passport_number],  address: params[:debt][:address],  borrower_name: params[:debt][:borrower_name],  borrower_lastname: params[:debt][:borrower_lastname],  borrower_patronymic: params[:debt][:borrower_patronymic],   borrower_passport_series: params[:debt][:borrower_passport_series],  borrower_passport_number: params[:debt][:borrower_passport_number],  borrower_address: params[:debt][:borrower_address], debt_summ: params[:debt][:debt_summ],  date_return_debt: params[:debt][:date_return_debt],  passport_institution: params[:debt][:passport_institution], passport_date: params[:debt][:passport_date], borrower_passport_date: params[:debt][:borrower_passport_date], borrower_passport_institution: params[:debt][:borrower_passport_institution])
+    @debt = Debt.create(name: params[:debt][:name], lastname: params[:debt][:lastname],  patronymic: params[:debt][:patronymic], passport_series: params[:debt][:passport_series], passport_number: params[:debt][:passport_number], date_of_birth: params[:debt][:date_of_birth],  address: params[:debt][:address],  borrower_name: params[:debt][:borrower_name],  borrower_lastname: params[:debt][:borrower_lastname],  borrower_patronymic: params[:debt][:borrower_patronymic],   borrower_passport_series: params[:debt][:borrower_passport_series],  borrower_passport_number: params[:debt][:borrower_passport_number], borrower_date_of_birth: params[:debt][:borrower_date_of_birth], borrower_address: params[:debt][:borrower_address], debt_summ: params[:debt][:debt_summ],  date_return_debt: params[:debt][:date_return_debt],  passport_institution: params[:debt][:passport_institution], passport_date: params[:debt][:passport_date], borrower_passport_date: params[:debt][:borrower_passport_date], borrower_passport_institution: params[:debt][:borrower_passport_institution])
 
     if @debt.errors.any?
       flash[:notice] = 'Введите данные ещё раз'
@@ -31,6 +31,12 @@ class DebtsController < ApplicationController
 
   def debt_for_borrower
     @debt = Debt.new
+  end
+
+  def destroy
+    Debt.find(params[:id]).destroy
+    flash[:notice] = 'Расписка успешно удалёна'
+    redirect_to "/all"
   end
 
   def new_user_debt
