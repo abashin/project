@@ -1,5 +1,8 @@
 <% @debts.each do |u| %>
+  <div class="alert alert-light" role="alert">
+
   <p>
+
     РАСПИСКА
     в получении суммы займа
 
@@ -21,6 +24,8 @@
 
     "__"___________ ____ г. ______________________
     (подпись Заемщика)      (Ф.И.О. Заемщика)
-    <%= link_to 'delete', u, method: :delete %>
+    <span class=""badge badge-pill badge-light"><%= link_to 'delete', u, method: :delete %></span>
+    
   </p>
+  </div>
 <% end %>

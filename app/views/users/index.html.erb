@@ -1,10 +1,17 @@
 
 <% @users.each do |u| %>
   <p>
-    <td>
-    <%= u.email%>
-      <%= link_to 'delete', u, method: :delete %>
-      <%= link_to 'edit', edit_user_path(u) %>
-    </td>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= u.email%></h5>
+  <p class="card-text">
+    <p>Имя: <%= u.name%></p>
+    <p>Фамилия: <%= u.lastname%></p>
+    <p>Отчество: <%= u.patronymic%></p>
+  </p>
+  <%=link_to 'delete',u, method: :delete, :class => "card-link" %>
+  <%=link_to 'edit', edit_user_path(u), :class => "card-link" %>
+  </div>
+  </div>
   </p>
 <% end %>

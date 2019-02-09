@@ -1,0 +1,35 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= if logged_in?
+          link_to 'личный кабинет', '/personal_area', :class => "nav-link active"
+        else
+          link_to 'вход', '/signin', :class => "nav-link active"
+        end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'новая расписка', '/user_debt_main_page', :class => "nav-link"
+        if logged_in?
+          link_to 'новая расписка', '/user_debt_main_page', :class => "nav-link"
+        else
+          link_to 'новая расписка', '/new_debt', :class => "nav-link"
+        end %>
+  </li>
+  <li class="nav-item">
+    <%= if logged_in?
+          link_to 'мои расписки', '/my_debts', :class => "nav-link"
+        end%>
+  </li>
+  <li class="nav-item">
+    <%= if check_admin
+          link_to 'все пользователи', '/index', :class => "nav-link"
+        end%>
+  </li>
+  <li class="nav-item">
+    <%= if check_admin
+          link_to 'все расписки', '/all', :class => "nav-link"
+        end %></nav>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">О нас</a>
+  </li>
+</ul>

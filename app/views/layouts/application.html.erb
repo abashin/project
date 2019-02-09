@@ -11,28 +11,8 @@
 
 
   <body>
-  <ul class = 'menu' >
-    <p><%= link_to 'домой', '/' %></p>
-    <p><%= link_to 'новая расписка', '/user_debt_main_page'
-            if logged_in?
-              link_to 'новая расписка', '/user_debt_main_page'
-            else
-              link_to 'новая расписка', '/new_debt'
-            end %></p>
-    <p><%= if logged_in?
-              link_to 'личный кабинет', '/personal_area'
-            else
-              link_to 'вход', '/signin'
-            end %></p>
-    <p><%= if logged_in?
-              link_to 'мои расписки', '/my_debts'
-            end%></p>
-    <p><%= if check_admin
-              link_to 'все пользователи', '/index'
-            end%></p>
-    <p><%= if check_admin
-               link_to 'все расписки', '/all'
-           end %></p></ul>
+  <%= render "layouts/navigation" %>
+
 
 
   <% if flash[:notice]  %>
