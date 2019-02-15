@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def personal_area
+    @debts = Debt.where(borrower_name: current_user['name']) + Debt.where(name: current_user['name'])
   end
 
   def exit
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:notice] = 'Пользователь успешно удалён'
-    redirect_to "/index"
+    render 'new'
   end
 
   def signin
@@ -70,7 +71,7 @@ class UsersController < ApplicationController
       render 'edit'
     else
       login_user(@user)
-      redirect_to "/personal_area"
+      render 'new'
     end
   end
 

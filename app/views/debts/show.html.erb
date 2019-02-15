@@ -1,0 +1,17 @@
+<h3>Расписка <%=@debt.created_at.day%>.<%=@debt.created_at.month%>.<%=@debt.created_at.year%></h3>
+
+<p> г. _______________                                  "__"___________ ____ г.</p>
+<p>Я, заемщик, <%= @debt.name %> <%= @debt.lastname %> <%= @debt.patronymic %>,</p>
+<p>паспорт: <%= @debt.passport_series %> № <%= @debt.passport_number %>,</p>
+<p>выдан: <%= @debt.passport_institution  %> <%= @debt.passport_date  %>,</p>
+<p>проживающему(ей) по адресу: <%= @debt.address %>,</p>
+<p>получил от <%= @debt.borrower_name %> <%= @debt.borrower_lastname %> <%= @debt.borrower_patronymic %>,</p>
+<p>паспорт: <%=@debt.borrower_passport_series %> N <%= @debt.borrower_passport_number %>,</p>
+<p>выдан <%= @debt.borrower_passport_institution %> <%= @debt.borrower_passport_date %>,</p>
+<p>проживающему(ей) по адресу: <%= @debt.borrower_address %>,</p>
+<p>денежные средства в сумме: <%= @debt.debt_summ %></p>
+<p>и обязуюсь возвратить Заимодавцу Сумму займа в срок до <%= @debt.date_return_debt %></p>
+<p>"__"___________ ____ г. ______________________</p>
+<p>(подпись Заемщика)(Ф.И.О. Заемщика)</p>
+
+<input type="submit" class="btn btn-primary" name="commit" value="Удалить расписку" data-disable-with="Create Debt">

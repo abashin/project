@@ -1,3 +1,30 @@
-<p>тут в будущем будет личный кабинет пользователя</p>
-<p><%= current_user %></p>
-<%= link_to 'выход', '/exit' %>
+
+<body class="bg-light">
+
+<div class="container">
+
+  <div class="card-deck mb-4 text-center">
+
+    <% @debts.each do |u| %>
+      <div class="col-4 h-100 mb-3">
+        <div class="card mb-4 box-shadow" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Расписка <%=u.created_at.day%>.<%=u.created_at.month%>.<%=u.created_at.year%></h5>
+            <p class="card-text">
+            <p>Заемщик: <%= u.name %> <%= u.lastname %> <%= u.patronymic %>,</p>
+            <p>Заидомовец: <%= u.borrower_name %> <%= u.borrower_lastname %> <%= u.borrower_patronymic %>,</p>
+            <p>Сумма: <%= u.debt_summ %></p>
+            <p>Cрок: <%= u.date_return_debt %></p>
+            </p>
+            <%= link_to 'show', u , :class => "card-link"%>
+            <%=link_to 'delete',u, method: :delete, :class => "card-link" %>
+
+
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</body>

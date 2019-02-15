@@ -1,19 +1,101 @@
+<body class="bg-light">
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-5" >
 
-<%= form_for @debt, url: 'create_debt_for_borrower' do |f| %>
-  <p>РАСПИСКА</p>
-  <p>в получении суммы займа</p>
-  <p> г. _______________                                  "__"___________ ____ г.</p>
-  <p>Я, заемщик, <input type="text" placeholder="имя заемщика" name="debt[name]" id="debt_name" /> <input type="text" placeholder="фамилия заемщика" name="debt[lastname]" id="debt_lastname" /> <input type="text" placeholder="отчество заемщика" name="debt[patronymic]" id="debt_patronymic" />,</p>
-  <p>паспорт: <input type="text" placeholder="серия паспорта заемщика" name="debt[passport_series]" id="debt_passport_series" /> <input type="text" placeholder="номер паспорта заемщика" name="debt[passport_number]" id="debt_passport_number" />,</p>
-  <p>выдан: <input type="text" placeholder="орган выдавший паспорт заемщика" name="debt[passport_institution]" id="debt_passport_institution" /> <input type="text" placeholder="дата выдачи паспорта заемщику" name="debt[passport_date]" id="debt_passport_date" />,</p>
-  <p>проживающему(ей) по адресу: <input type="text" placeholder="адрес заемщика" name="debt[address]" id="debt_address" />,</p>
-  <p>получил от <%= current_user['name'] %> <%= current_user['lastname'] %> <%= current_user['patronymic'] %>,</p>
-  <p>паспорт: <%=current_user['passport_series'] %> N <%= current_user['passport_number'] %>,</p>
-  <p>выдан <%= current_user['passport_institution'] %> <%= current_user['passport_date'] %>,</p>
-  <p>проживающему(ей) по адресу: <%= current_user['address'] %>,</p>
-  <p>денежные средства в сумме <input type="text" placeholder="сумма займа" name="debt[debt_summ]" id="debt_debt_summ" /> рублей (далее - "Сумма займа")</p>
-  <p>и обязуюсь возвратить Заимодавцу Сумму займа в срок до <input type="text" placeholder="дата возврата денежных средств" name="debt[date_return_debt]" id="debt_date_return_debt" />г.</p>
-  <p>"__"___________ ____ г. ______________________</p>
-  <p>(подпись Заемщика)(Ф.И.О. Заемщика)</p>
-  <%= f.submit %>
-<% end %>
+    <%= form_for @debt, url: 'create_debt_for_borrower' do |f| %>
+      <div class="card">
+        <h5 class="card-header">Расписка для заидомовца</h5>
+        <div class="card-body">
+          <h5 class="card-title">Расписка в получении суммы займа</h5>
+
+          <p class="card-text">
+          <p> г. _______________                                  "__"___________ ____ г.</p>
+          <p>Я, заемщик,
+          <div class = "row">
+            <div class="col-sm-4" ><input type="text" placeholder="имя заемщика" name="debt[name]" id="debt_name"  class="form-control" ></div>
+            <div class="col-sm-4" ><input  class="form-control" type="text" placeholder="фамилия заемщика" name="debt[lastname]" id="debt_lastname"> </div>
+            <div class="col-sm-4" ><input  class="form-control" type="text" placeholder="отчество заемщика" name="debt[patronymic]" id="debt_patronymic" ></div>
+          </div>
+          </p>
+          <p>паспорт:
+          <div class = "row">
+            <div class="col-sm-6" ><input class="form-control" type="text" placeholder="серия паспорта заемщика" name="debt[passport_series]" id="debt_passport_series" /></div>
+              <div class="col-sm-6" ><input class="form-control" type="text" placeholder="номер паспорта заемщика" name="debt[passport_number]" id="debt_passport_number" /></div></div></p>
+          <p>выдан: <div class = "row">
+            <div class="col-sm-6"  ><input class="form-control" type="text" placeholder="орган выдавший паспорт заемщика" name="debt[passport_institution]" id="debt_passport_institution" /></div>
+            <div class="col-sm-6" ><input class="form-control" type="text" placeholder="дата выдачи паспорта заемщику" name="debt[passport_date]" id="debt_passport_date" /></div></div></p>
+          <p>проживающему(ей) по адресу:
+            <div><input  class="form-control"  type="text" placeholder="адрес заемщика" name="debt[address]" id="debt_address" /></div></p>
+          <p>получил от <%= current_user['name'] %> <%= current_user['lastname'] %> <%= current_user['patronymic'] %>,</p>
+          <p>паспорт: <%=current_user['passport_series'] %> N <%= current_user['passport_number'] %>,</p>
+          <p>выдан <%= current_user['passport_institution'] %> <%= current_user['passport_date'] %>,</p>
+          <p>проживающему(ей) по адресу: <%= current_user['address'] %>,</p>
+          <p>денежные средства в сумме
+          <div class = "row" ><div class="col-sm-12" ><input  class="form-control"  type="text" placeholder="сумма займа" name="debt[debt_summ]" id="debt_debt_summ" /></div></div>
+          </p>
+          <p>и обязуюсь возвратить Заимодавцу Сумму займа в срок до
+          <div><input  class="form-control"  type="text" placeholder="дата возврата денежных средств" name="debt[date_return_debt]" id="debt_date_return_debt" /></div>
+          </p>
+          <p>"__"___________ ____ г. ______________________</p>
+          <p>(подпись Заемщика)(Ф.И.О. Заемщика)</p>
+
+          </p>
+          <input type="submit" class="btn btn-primary" name="commit" value="Создать расписку" data-disable-with="Create Debt">
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+    <div class="col-sm-5" >
+      <%= form_for @debt, url: 'create_debt_with_logged_user' do |f| %>
+      <div class="card">
+        <h5 class="card-header">Расписка для заёмщика</h5>
+        <div class="card-body">
+          <h5 class="card-title">Расписка в получении суммы займа</h5>
+
+
+
+
+            <p> г. _______________                                  "__"___________ ____ г.</p>
+            <p>Я, заемщик, <%= current_user['name'] %> <%= current_user['lastname'] %> <%= current_user['patronymic'] %>,</p>
+            <p>паспорт: <%= current_user['passport_series'] %> № <%= current_user['passport_number'] %>,</p>
+            <p>выдан: <%= current_user['passport_institution']  %> <%= current_user['passport_date']  %>,</p>
+            <p>проживающему(ей) по адресу: <%= current_user['address'] %>,</p>
+            <p>получил от
+              <div class="row"><div class="col-sm-4" ><input class="form-control"  type="text" placeholder="имя заимодавца" name="debt[borrower_name]" id="debt_borrower_name" /></div>
+                <div class="col-sm-4" ><input class="form-control"  type="text" placeholder="фамилия заимодавца" name="debt[borrower_lastname]" id="debt_borrower_lastname" /></div>
+                <div class="col-sm-4" ><input type="text" placeholder="отчество заимодавца" class="form-control"  name="debt[borrower_patronymic]" id="debt_borrower_patronymic" /></div></div></p>
+            <p>паспорт:
+              <div class="row"><div class="col-sm-6"  ><input class="form-control"  type="text" placeholder="серия паспорта заимодавца"  name="debt[borrower_passport_series]" id="debt_borrower_passport_series" /></div>
+                <div class="col-sm-6"  ><input type="text" placeholder="номер паспорта заимодавца"  class="form-control"  name="debt[borrower_passport_number]" id="debt_borrower_passport_number" /></div></div></p>
+            <p>выдан
+              <div class="row"><div class="col-sm-6" ><input type="text"  class="form-control" placeholder="орган выдавший паспорт заимодавцу" name="debt[borrower_passport_institution]" id="debt_borrower_passport_institution" /></div>
+                <div class="col-sm-6" ><input type="text" class="form-control"  placeholder="дата выдачи паспорта заимодавцу" name="debt[borrower_passport_date]" id="debt_borrower_passport_date" /></div></div></p>
+            <p>проживающему(ей) по адресу: <div class="row"><div class="col-sm-12" > <input type="text"  class="form-control" placeholder="адрес заимодавца" name="debt[borrower_address]" id="debt_borrower_address" /></div></div></p>
+          <p>денежные средства в сумме
+          <div class = "row" ><div class="col-sm-12" ><input  class="form-control"  type="text" placeholder="сумма займа" name="debt[debt_summ]" id="debt_debt_summ" /></div></div>
+          </p>
+          <p>и обязуюсь возвратить Заимодавцу Сумму займа в срок до
+          <div><input  class="form-control"  type="text" placeholder="дата возврата денежных средств" name="debt[date_return_debt]" id="debt_date_return_debt" /></div>
+          </p>
+          <p>"__"___________ ____ г. ______________________</p>
+          <p>(подпись Заемщика)(Ф.И.О. Заемщика)</p>
+
+          </p>
+          <input type="submit" class="btn btn-primary" name="commit" value="Создать расписку" data-disable-with="Create Debt">
+
+
+
+
+
+
+        </div>
+      </div>
+    <% end %>
+
+
+
+  </div>
+</div>
+</body>
