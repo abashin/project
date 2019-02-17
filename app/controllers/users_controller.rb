@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def new_user
     @user = User.new
   end
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(email: params[:user][:email], password: params[:user][:password], name: params[:user][:name], lastname: params[:user][:lastname], patronymic: params[:user][:patronymic], passport_series: params[:user][:passport_series], passport_number: params[:user][:passport_number], passport_institution: params[:user][:passport_institution], passport_date: params[:user][:passport_date], address: params[:user][:address], right_id: params[:user][:right_id] )
     if @user.errors.any?
-      flash[:notice] = 'Введите данный ещё раз'
+      flash[:error] = 'Введите данный ещё раз'
       render 'new'
     else
       u = User.find_by_email(params[:user][:email])
@@ -52,11 +53,11 @@ class UsersController < ApplicationController
   def login
     u = User.find_by_email(params[:user][:email])
     if u && u.password == params[:user][:password]
-      flash[:notice] = 'You were logged in successfully'
+      flash[:notice] = 'Вы успешно авторизовались'
       login_user(u)
       redirect_to root_path
     else
-      flash[:notice] = 'Password or user is incorrect'
+      flash[:error] = "Email или пароль неправильный!"
       redirect_to signin_path
     end
 

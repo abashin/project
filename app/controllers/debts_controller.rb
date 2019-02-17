@@ -19,7 +19,7 @@ class DebtsController < ApplicationController
       render 'new'
     else
       flash[:notice] = 'Расписка была создана'
-      render 'new'    end
+      redirect_to '/personal_area'    end
   end
 
   def create_debt_for_borrower
@@ -30,7 +30,7 @@ class DebtsController < ApplicationController
       render 'new'
     else
       flash[:notice] = 'Расписка была создана'
-      render 'new'    end
+      redirect_to '/personal_area'    end
   end
 
   def debt_for_borrower
@@ -40,7 +40,7 @@ class DebtsController < ApplicationController
   def destroy
     Debt.find(params[:id]).destroy
     flash[:notice] = 'Расписка успешно удалёна'
-    render 'new'
+    redirect_to '/personal_area'
   end
 
   def new_user_debt
@@ -55,7 +55,7 @@ class DebtsController < ApplicationController
       render 'new'
     else
       flash[:notice] = 'Расписка была создана'
-      render 'new'    end
+      redirect_to '/personal_area'    end
   end
 
   def all

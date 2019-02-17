@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  debt_summ: MyString
+  issue_day: MyString
+  issue_month: MyString
+  issue_year: MyString
+  return_day: MyString
+  return_month: MyString
+  return_year: MyString
+  month_percent: MyString
+  fine_percent: MyString
+  fine_summ: MyString
+
+two:
+  debt_summ: MyString
+  issue_day: MyString
+  issue_month: MyString
+  issue_year: MyString
+  return_day: MyString
+  return_month: MyString
+  return_year: MyString
+  month_percent: MyString
+  fine_percent: MyString
+  fine_summ: MyString
