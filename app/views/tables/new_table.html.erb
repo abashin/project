@@ -1,5 +1,5 @@
 
-
+<%= form_for @table, url: 'create_table' do |f| %>
 
 <body class="bg-light">
 <div class="container">
@@ -14,7 +14,7 @@
       <div class="row">
         <div class='col-sm-12'>
           <label for="firstName">Сумма</label>
-          <input type="text" class="form-control" id="user_name" name="table[debt_summ]" placeholder="1000" value="" required >
+          <input type="text" class="form-control" id="debt_summ" name="table[debt_summ]" placeholder="1000" value="" required >
         </div>
       </div>
 
@@ -24,7 +24,7 @@
         <div class='col-sm-4'>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Число</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="issue_day" name="table[issue_day]">
               <option>01</option>
               <option>02</option>
               <option>03</option>
@@ -48,7 +48,7 @@
               <option>21</option>
               <option>22</option>
               <option>23</option>
-              <option>24</option><option>01</option>
+              <option>24</option>
               <option>25</option>
               <option>26</option>
               <option>27</option>
@@ -62,7 +62,7 @@
         <div class='col-sm-4'>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Месяц</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="issue_month" name="table[issue_month]">
               <option>01</option>
               <option>02</option>
               <option>03</option>
@@ -80,7 +80,7 @@
         </div>
         <div class="col-sm-4">
           <label for="exampleFormControlSelect1">Год</label>
-          <input type="text" class="form-control" id="user_name" name="table[debt_summ]" placeholder="2019" value="" required >
+          <input type="text" class="form-control" id="issue_year" name="table[issue_year]" placeholder="2019" value="" required >
         </div>
       </div>
 
@@ -90,7 +90,7 @@
         <div class='col-sm-4'>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Число</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="return_day" name="table[return_day]">
               <option>01</option>
               <option>02</option>
               <option>03</option>
@@ -114,7 +114,7 @@
               <option>21</option>
               <option>22</option>
               <option>23</option>
-              <option>24</option><option>01</option>
+              <option>24</option>
               <option>25</option>
               <option>26</option>
               <option>27</option>
@@ -128,7 +128,7 @@
         <div class='col-sm-4'>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Месяц</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="return_month" name="table[return_month]">
               <option>01</option>
               <option>02</option>
               <option>03</option>
@@ -146,15 +146,17 @@
         </div>
         <div class="col-sm-4">
           <label for="exampleFormControlSelect1">Год</label>
-          <input type="text" class="form-control" id="user_name" name="table[debt_summ]" placeholder="2019" value="" required >
+          <input type="text" class="form-control" id="return_year" name="table[return_year]" placeholder="2019" value="" required >
         </div>
       </div>
+
+
 
       <hr class="mb-4">
       <h4 class="mb-3">Процент за месяц</h4>
       <div class="row">
         <div class="col-sm-12">
-          <input type="text" class="form-control" id="user_name" name="table[debt_summ]" placeholder="10%" value="" required >
+          <input type="text" class="form-control" id="month_percent" name="table[month_percent]" placeholder="10%" value="" required >
         </div>
       </div>
 
@@ -163,22 +165,24 @@
       <div class="row">
         <div class="col-sm-12">
           <label for="exampleFormControlSelect1">Процент при просрочке (за каждый день просрочки)</label>
-          <input type="text" class="form-control" id="user_name" name="table[debt_summ]" placeholder="5%" value="" required >
+          <input type="text" class="form-control" id="fine_percent" name="table[fine_percent]" placeholder="5%" value="" required >
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12">
           <label for="exampleFormControlSelect1">Выплата при просрочке</label>
-          <input type="text" class="form-control" id="user_name" name="table[debt_summ]" placeholder="10000" value="" required >
+          <input type="text" class="form-control" id="fine_summ" name="table[fine_summ]" placeholder="10000" value="" required >
         </div>
       </div>
 
       <hr class="mb-4">
-      <button class="btn btn-primary btn-lg btn-block" name="commit"  data-disable-with="Create User" type="submit">Создать</button>
-
+      <button class="btn btn-primary btn-lg btn-block" name="commit"  data-disable-with="Create Table" type="submit">Создать</button>
+      <%= f.submit %>
+      <hr class="mb-4">
     </div>
 
 
   </div>
 </div>
 </body>
+<% end %>

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/new_table', to: 'tables#new_table'
 
   post 'login', to: 'users#login'
+  post 'create_table', to: 'tables#create_table'
   post 'create', to: 'users#create'
   post 'create_debt_with_logged_user', to: 'debts#create_debt_with_logged_user'
   post 'create_debt_for_borrower', to: 'debts#create_debt_for_borrower'
