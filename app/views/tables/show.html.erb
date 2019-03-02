@@ -1,0 +1,12 @@
+<h2> тут будет таблица вылпат, я её сделаю позже</h2>
+<% @summ = @table.debt_summ.to_i
+@give_month = @table.issue_month.to_i
+@give_year = @table.issue_year.to_i
+@give_day = @table.issue_day.to_i
+@back_year = @table.return_year.to_i
+@back_month = @table.return_month.to_i
+@back_day = @table.return_day.to_i
+@percent = @table.month_percent.to_i
+@month_count = (@give_year - @back_year) * 12
+
+%>

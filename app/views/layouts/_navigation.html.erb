@@ -9,6 +9,9 @@
           link_to 'Все расписки', '/all', :class => "p-2 text-dark"
         end %>
     <%= if check_admin
+          link_to 'Все таблицы', '/all_tables', :class => "p-2 text-dark"
+        end %>
+    <%= if check_admin
           link_to 'Все пользователи', '/index', :class => "p-2 text-dark"
         end%>
       <%= link_to 'Новая расписка', '/user_debt_main_page', :class => "p-2 text-dark"
@@ -16,6 +19,12 @@
             link_to 'Новая расписка', '/debt_for_borrower', :class => "p-2 text-dark"
 
           end %>
+    <%= link_to 'Новая расписка', '/user_debt_main_page', :class => "p-2 text-dark"
+        if logged_in?
+          link_to 'Новая таблица', '/new_table', :class => "p-2 text-dark"
+
+        end %>
+
 
 
   </nav>

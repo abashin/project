@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def personal_area
     @debts = Debt.where(borrower_name: current_user['name']) + Debt.where(name: current_user['name'])
+    @tables = Table.where(creator_email: current_user['email'])
+
   end
 
   def exit

@@ -3,25 +3,25 @@
 
   <div class="card-deck mb-4 text-center">
 
-<% @users.each do |u| %>
+    <% @users.each do |u| %>
       <div class="col-4 h-100 mb-3">
-    <div class="card mb-4 box-shadow" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= u.email%></h5>
-        <p class="card-text">
-          <p>Имя: <%= u.name%></p>
-          <p>Фамилия: <%= u.lastname%></p>
-          <p>Отчество: <%= u.patronymic%></p>
-        </p>
-        <%=link_to 'delete',u, method: :delete, :class => "card-link" %>
-        <%=link_to 'edit', edit_user_path(u), :class => "card-link" %>
+        <div class="card mb-4 box-shadow" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= u.email%></h5>
+            <p class="card-text">
+            <p>Имя: <%= u.name%></p>
+            <p>Фамилия: <%= u.lastname%></p>
+            <p>Отчество: <%= u.patronymic%></p>
+            </p>
+            <%=link_to 'delete',u, method: :delete, :class => "card-link" %>
+            <%=link_to 'edit', edit_user_path(u), :class => "card-link" %>
 
 
 
+          </div>
+        </div>
       </div>
-    </div>
-      </div>
-<% end %>
+    <% end %>
   </div>
 </div>
 </body>

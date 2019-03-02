@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_16_191227) do
+ActiveRecord::Schema.define(version: 2019_03_01_101305) do
 
   create_table "debts", force: :cascade do |t|
     t.string "name"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_02_16_191227) do
     t.string "fine_summ"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "creator_email"
   end
 
   create_table "users", force: :cascade do |t|

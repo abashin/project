@@ -1,0 +1,26 @@
+<body class="bg-light">
+<div class="container">
+
+  <div class="card-deck mb-4 text-center">
+
+    <% @tables.each do |u| %>
+      <div class="col-4 h-100 mb-3">
+        <div class="card mb-4 box-shadow" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= u.creator_email%></h5>
+            <p class="card-text">
+            <p>Сумма: <%= u.debt_summ%></p>
+            <p>Дата выдачи: <%= u.issue_day%>.<%= u.issue_month%>.<%= u.issue_year%></p>
+            <p>Дата возвращения: <%= u.return_day%>.<%= u.return_month%>.<%= u.return_year%></p>
+            </p>
+            <%=link_to 'delete',u, method: :delete, :class => "card-link" %>
+            <%=link_to 'show',u, method: :show, :class => "card-link" %>
+
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</body>

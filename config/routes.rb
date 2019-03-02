@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :tables
   resources :users
   get '/debt/:id', to: 'debts#show'
+  get '/all_tables', to: 'tables#all_tables'
+  get '/table/:id', to: 'tables#show'
   get '/my_debts', to: 'debts#my_debts'
   get '/user_debt_main_page', to: 'debts#user_debt_main_page'
   get '/debt_for_borrower', to: 'debts#debt_for_borrower'
@@ -18,10 +20,11 @@ Rails.application.routes.draw do
   get '/new_table', to: 'tables#new_table'
 
   post 'login', to: 'users#login'
-  post 'create_table', to: 'tables#create_table'
+  post 'create_table', to: 'tables#create'
   post 'create', to: 'users#create'
   post 'create_debt_with_logged_user', to: 'debts#create_debt_with_logged_user'
   post 'create_debt_for_borrower', to: 'debts#create_debt_for_borrower'
+  post 'tables/:id', to: 'tables#show'
 
 
   root "users#main"
